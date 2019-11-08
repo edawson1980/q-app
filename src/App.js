@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Tip from './Tip.js';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
           Tip Calculator
         </h1>
       </header>
+
       <div className="app-body">
         <form>
           <input type="text" name="total" placeholder="Total After Tax"></input>
@@ -22,10 +24,16 @@ function App() {
           <input type="text" name="party" placeholder="Size of Party"></input>
           <input type="submit" value="Calculate Tip"/>
         </form>
-
-      </div>
+        <Tip />
     </div>
+
+
+
+
+
+  </div>
   );
+
 }
 
 export default App;

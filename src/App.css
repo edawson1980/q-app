@@ -13,8 +13,13 @@
   color:#080633;
 }
 .app-body{
-  margin-left:45%;
+  margin-left:42%;
+  margin-right:42%;
+  border:2px solid #d5d5d5;
 }
 input, select{
   display:flex;
+}
+form{
+  padding:10px 10px;
 }
