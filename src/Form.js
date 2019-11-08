@@ -29,8 +29,6 @@ class Form extends React.Component{
     let totalAmount = this.state.total;
     let x = Number(totalAmount);
 
-
-
     let partySize = this.state.party;
     let y = Number(partySize);
 
@@ -57,8 +55,11 @@ class Form extends React.Component{
           <input type="text" name="party" onChange={this.handlePartyChange}  placeholder="Size of Party"></input>
           <input type="submit" value="Calculate Tip"/>
         </form>
-        <Tip />
-        <Total />
+        <div className="outputs">
+          <Tip />
+          <Total />
+        </div>
+
     </div>
 
     );
