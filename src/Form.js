@@ -31,7 +31,7 @@ class Form extends React.Component{
     console.log(typeof x);
     console.log(x);
 
-    if(Number.isInteger(x)){
+    if(!Number.isNaN(x)){
       alert('Thanks!');
     }else{
       alert('Please input a numeric value')
@@ -43,7 +43,7 @@ class Form extends React.Component{
     return(
       <div className="app-body">
         <form onSubmit={this.handleSubmit}>
-          <input type="text" name="total"onChange={this.handleTotalChange} placeholder="Total After Tax"></input>
+          <input type="text" name="total" onChange={this.handleTotalChange} placeholder="Total After Tax"></input>
           <select name="tip">
             <option value=".1">10%</option>
             <option value=".15">15%</option>
