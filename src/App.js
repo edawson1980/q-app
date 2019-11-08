@@ -11,7 +11,7 @@ function App() {
       </header>
       <div className="app-body">
         <form>
-          <input type="number" name="total" placeholder="Total After Tax"></input>
+          <input type="text" name="total" placeholder="Total After Tax"></input>
           <select name="tip">
             <option value='.1'>10%</option>
             <option value='.15'>15%</option>
@@ -19,7 +19,7 @@ function App() {
             <option value='.2'>20%</option>
             <option value='.22'>22%</option>
           </select>
-          <input type="number" name="party" placeholder="Size of Party"></input>
+          <input type="text" name="party" placeholder="Size of Party"></input>
         </form>
 
       </div>

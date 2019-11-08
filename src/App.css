@@ -12,3 +12,9 @@
   font-size: calc(10px + 2vmin);
   color:#080633;
 }
+.app-body{
+  margin-left:45%;
+}
+input, select{
+  display:flex;
+}
