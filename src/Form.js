@@ -31,7 +31,10 @@ class Form extends React.Component{
     console.log(typeof x);
     console.log(x);
 
-    if(!Number.isNaN(x)){
+    let partySize = this.state.party;
+    let y = Number(partySize);
+
+    if(!Number.isNaN(x) && !Number.isNaN(y)){
       alert('Thanks!');
     }else{
       alert('Please input a numeric value')
@@ -51,7 +54,7 @@ class Form extends React.Component{
             <option value=".2">20%</option>
             <option value=".22">22%</option>
           </select>
-          <input type="text" onChange={this.handlePartyChange} name="party" placeholder="Size of Party"></input>
+          <input type="text" name="party" onChange={this.handlePartyChange}  placeholder="Size of Party"></input>
           <input type="submit" value="Calculate Tip"/>
         </form>
         <Tip />
