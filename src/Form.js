@@ -6,21 +6,30 @@ import Total from './Total.js';
 class Form extends React.Component{
   constructor(props){
     super(props);
-    this.state = {value: ''};
+    this.state = {
+      total: '',
+      party: ''
+    };
 
 
-    this.handleChange = this.handleChange.bind(this);
+    this.handleTotalChange = this.handleTotalChange.bind(this);
+    this.handlePartyChange = this.handlePartyChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  handleChange(event){
-    this.setState({value: event.target.value});
+  handleTotalChange(event){
+    this.setState({value: event.target.total});
+  };
+  handlePartyChange(event){
+    this.setState({value: event.target.party});
   };
 
 
 
   handleSubmit(event){
-    let x = this.state.value;
-    if(x != NaN){
+    let x = Number(this.state.value);
+    console.log(typeof x)
+    let y = x.isNan();
+    if(y){
       alert('Thanks!');
     }else{
       alert('Please input a numeric value')
@@ -32,7 +41,7 @@ class Form extends React.Component{
     return(
       <div className="app-body">
         <form onSubmit={this.handleSubmit}>
-          <input type="text" name="total" value={this.state.value} onChange={this.handleChange} placeholder="Total After Tax"></input>
+          <input type="text" name="total" onChange={this.handleTotalChange} placeholder="Total After Tax"></input>
           <select name="tip">
             <option value=".1">10%</option>
             <option value=".15">15%</option>
@@ -40,7 +49,7 @@ class Form extends React.Component{
             <option value=".2">20%</option>
             <option value=".22">22%</option>
           </select>
-          <input type="text" value={this.state.value} onChange={this.handleChange} name="party" placeholder="Size of Party"></input>
+          <input type="text" onChange={this.handlePartyChange} name="party" placeholder="Size of Party"></input>
           <input type="submit" value="Calculate Tip"/>
         </form>
         <Tip />
