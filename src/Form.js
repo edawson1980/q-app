@@ -17,19 +17,21 @@ class Form extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleTotalChange(event){
-    this.setState({value: event.target.total});
+    this.setState({total: event.target.value});
   };
   handlePartyChange(event){
-    this.setState({value: event.target.party});
+    this.setState({party: event.target.value});
   };
 
 
 
   handleSubmit(event){
-    let x = Number(this.state.value);
-    console.log(typeof x)
-    let y = x.isNan();
-    if(y){
+    let totalAmount = this.state.total;
+    let x = Number(totalAmount);
+    console.log(typeof x);
+    console.log(x);
+
+    if(Number.isInteger(x)){
       alert('Thanks!');
     }else{
       alert('Please input a numeric value')
@@ -41,7 +43,7 @@ class Form extends React.Component{
     return(
       <div className="app-body">
         <form onSubmit={this.handleSubmit}>
-          <input type="text" name="total" onChange={this.handleTotalChange} placeholder="Total After Tax"></input>
+          <input type="text" name="total"onChange={this.handleTotalChange} placeholder="Total After Tax"></input>
           <select name="tip">
             <option value=".1">10%</option>
             <option value=".15">15%</option>
