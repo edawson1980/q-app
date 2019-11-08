@@ -28,13 +28,13 @@ class Form extends React.Component{
   handleSubmit(event){
     let totalAmount = this.state.total;
     let x = Number(totalAmount);
-    console.log(typeof x);
-    console.log(x);
+
+
 
     let partySize = this.state.party;
     let y = Number(partySize);
 
-    if(!Number.isNaN(x) && !Number.isNaN(y)){
+    if((!Number.isNaN(x) && (x > 1)) && (!Number.isNaN(y) && (y > 1))){
       alert('Thanks!');
     }else{
       alert('Please input a numeric value')
