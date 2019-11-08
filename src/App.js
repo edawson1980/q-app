@@ -12,12 +12,6 @@ function App() {
         </h1>
       </header>
       <Form />
-
-
-
-
-
-
   </div>
   );
 

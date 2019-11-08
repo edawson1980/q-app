@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import Tip from './Tip.js';
+import Total from './Total.js';
 
 class Form extends React.Component{
   render(){
@@ -19,7 +20,9 @@ class Form extends React.Component{
           <input type="submit" value="Calculate Tip"/>
         </form>
         <Tip />
+        <Total />
     </div>
+
     );
   }
 }
